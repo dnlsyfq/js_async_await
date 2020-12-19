@@ -75,3 +75,17 @@ withAsync(100)
 
 ```
 
+### await 
+
+await keyword can only be used inside an async function.
+
+Since promises resolve in an indeterminate amount of time, await halts, or pauses, the execution of our async function until a given promise is resolved.
+
+```
+async function asyncFuncExample(){
+  let resolvedValue = await myPromise();
+  console.log(resolvedValue);
+}
+ 
+asyncFuncExample(); // Prints: I am resolved now!
+```
