@@ -89,3 +89,6 @@ async function asyncFuncExample(){
  
 asyncFuncExample(); // Prints: I am resolved now!
 ```
+
+await operator returns the resolved value of a promise. 
+
