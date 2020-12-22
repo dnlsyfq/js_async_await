@@ -92,3 +92,36 @@ asyncFuncExample(); // Prints: I am resolved now!
 
 await operator returns the resolved value of a promise. 
 
+### Dependent Promises
+
+make a network request based on a query to a database. In that case, we would need to wait to make the network request until we had the results from the database
+
+* native
+
+```
+function nativePromiseVersion(){
+    returnsFirstPromise()
+        .then(
+            (firstValue) => {
+                console.log(firstValue);
+                return returnsSecondPromise(firstValue);
+            }
+        )
+        .then(
+            (secondValue) => {
+                console.log(secondValue);
+            }
+        );
+}
+```
+
+* async await
+
+```
+async function asyncAwaitVersion(){
+    let firstValue = await returnsFirstPromise();
+    console.log(firstValue);
+    let secondValue = await returnsSecondPromise(firstValue);
+    console.log(secondValue);
+}
+``` 
